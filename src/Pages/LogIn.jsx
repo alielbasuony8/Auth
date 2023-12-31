@@ -34,7 +34,7 @@ const LogIn = () => {
           localStorage.setItem("user", JSON.stringify(response.data.data))
           localStorage.setItem("token", response.data.data.token);
           navigatTo("/profile");
-          window.location.reload();
+          window.location.reload(); 
         }
       }
     } catch (e) {
