@@ -5,10 +5,8 @@ import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { URL } from "../Utils/URL";
-import { json, useNavigate } from "react-router-dom";
 
 const LogIn = () => {
-  const navigatTo = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loader, setLoader] = useState(false);
@@ -33,8 +31,7 @@ const LogIn = () => {
           console.log(response);
           localStorage.setItem("user", JSON.stringify(response.data.data))
           localStorage.setItem("token", response.data.data.token);
-          navigatTo("/profile");
-          window.location.reload();
+          window.location.href = "/profile";
         }
       }
     } catch (e) {
